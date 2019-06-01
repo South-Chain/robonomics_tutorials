@@ -115,8 +115,7 @@ export default {
           this.lighthouse.name = robonomics.lighthouse.name
           this.lighthouse.address = robonomics.lighthouse.address
           robonomics.onDemand(this.model, msg => {
-            console.log(msg)
-            if (msg.account === robonomics.account) {
+            if (msg.sender === robonomics.account.address) {
               this.demand = msg
             }
           })

@@ -80,7 +80,7 @@ export default {
           this.lighthouse.name = robonomics.lighthouse.name
           this.lighthouse.address = robonomics.lighthouse.address
           robonomics.onDemand(this.model, msg => {
-            console.log('demand', msg);
+            console.log('hello demand', msg);
           })
           this.robonomicsStatus = true
       });
