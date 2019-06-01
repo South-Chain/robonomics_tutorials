@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <div id="app">
     <v-app id="inspire">
       <header role="banner">
@@ -27,17 +27,53 @@
     </v-app>
   </div>
 </template>
+-->
+<template>
+  <div id="app">
+    <v-app id="inspire">
+      <v-content>
+        <v-container grid-list-md style="margin: 18px auto 15px;">
+          <v-layout justify-center row wrap>
+            <v-flex sm12 md10 lg6>
+              <v-layout row wrap>
+                <v-flex xs12 sm6 class="text-xs-center text-sm-left">
+                  <router-link to="/">
+                    <img alt="" src="static/assets/i/logo.svg" style="height: 45px;"/>
+                  </router-link>
+                </v-flex>
+                <v-flex xs12 sm6 class="text-xs-center text-sm-right">
+                  <v-btn to="/" outline>Hello</v-btn>
+                  <v-btn to="/trade" outline>Trade</v-btn>
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
+        </v-container>
+        <web3-check :networks="network" @changeNetwork="onChangeNetwork" @changeAccount="onChangeAccount">
+          <router-view v-if="ready"/>
+          <div v-else>Initialization Robonomics</div>
+        </web3-check>
+      </v-content>
+    </v-app>
+  </div>
+</template>
 
 <script>
 import Vue from "vue";
 import Web3Check from "vue-web3-check";
 import { initRobonomics } from "./utils/robonomics";
 import getIpfs from "./utils/ipfs";
+import * as config from './config';
+
+const network = Object.keys(config.ROBONOMICS).map((item) => {
+  return Number(item)
+})
 
 export default {
   name: "app",
   data() {
     return {
+      network: network,
       ready: false
     };
   },
@@ -50,6 +86,16 @@ export default {
         });
       });
     });
+  },
+  methods: {
+    onChangeNetwork (data) {
+      if (data.check === true) {
+        window.location.reload(false)
+      }
+    },
+    onChangeAccount () {
+      window.location.reload(false)
+    }
   }
 };
 </script>
