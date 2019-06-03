@@ -152,7 +152,7 @@ export default {
             ...info,
             resultMessage: []
           }
-          liability.watchResult((result) => {
+          liability.onResult().then(result => {
             console.log('result', result)
             this.setResult(result, true)
           })
@@ -180,6 +180,7 @@ export default {
           validatorFee: 0,
           deadline: r.number + 1000
         }
+        console.log(demand);
         robonomics.sendDemand(demand)
           .then(liability => this.newLiability(liability))
           .then(() => {
