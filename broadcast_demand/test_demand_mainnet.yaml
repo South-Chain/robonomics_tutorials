@@ -1,0 +1,25 @@
+model: {
+  multihash: "Qmbb8qcoEAbXWzFnzRf8NRbTNuJvWEXtZoH2L1LjnFtjbs"
+}
+objective: {
+  multihash: "QmfC29P969647p1W8E19FwXcoL6TJV78U12zXMogo4jjvY"
+}
+token: {
+  address: "xrt.5.robonomics.eth"
+}
+cost: {
+  uint256: "0"
+}
+lighthouse: {
+  address: "airalab.lighthouse.5.robonomics.eth"
+}
+validator: {
+  address: "0x0000000000000000000000000000000000000000"
+}
+validatorFee: {
+  uint256: "0"
+}
+deadline: {
+  uint256: "9999999"
+}
+

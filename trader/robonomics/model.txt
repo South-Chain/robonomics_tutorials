@@ -1,0 +1,2 @@
+The simplest trader node
+# Example 3

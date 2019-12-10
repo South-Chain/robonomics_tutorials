@@ -1,0 +1,2 @@
+An example of adding access control list to a trader
+# Example 4
