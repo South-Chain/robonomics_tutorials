@@ -1,0 +1,3 @@
+The example shows one of the most simplest way of using Robnomics Network
+
+The agent waits for a demand message with a right model and when it occurs, sends data back
